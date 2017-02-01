@@ -1,7 +1,7 @@
 package com.appshaala.sitepoint.to_do_app
 
 /**
- * Created by mahesh on 29-Jan-17.
+ * Created by Ankul on 28-Jan-17.
  */
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -19,12 +19,12 @@ class MainActivity : AppCompatActivity() {
             val arrayList = savedInstanceState.get("ToDoList")
             task_list.addAll(arrayList as List<String>)
         }
-        MainUI(TodoAdapter(task_list)).setContentView(this)
+//        MainUI(TodoAdapter(task_list)).setContentView(this)
+        Demo().setContentView(this)
 
     }
     override fun onSaveInstanceState(outState: Bundle?) {
         outState?.putStringArrayList("ToDoList", task_list)
         super.onSaveInstanceState(outState)
     }
-
 }

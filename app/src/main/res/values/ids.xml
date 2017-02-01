@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="container" type="id" />
+    <item name="dialog_toolbar" type="id" />
+    <item name="taskNum" type="id" />
+    <item name="taskName" type="id" />
+    <item name="likeBtn" type="id" />
+</resources>

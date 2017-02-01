@@ -1,7 +1,5 @@
 package com.appshaala.sitepoint.to_do_app
 
-import android.graphics.Typeface
-import android.graphics.Typeface.ITALIC
 import android.support.v4.content.ContextCompat
 import android.view.Gravity
 import android.view.View
@@ -11,7 +9,7 @@ import org.jetbrains.anko.*
 import org.jetbrains.anko.appcompat.v7.toolbar
 import org.jetbrains.anko.design.floatingActionButton
 /**
- * Created by mahesh on 12-Jan-17.
+ * Created by Ankul on 28-Jan-17.
  */
 
 class MainUI(val mAdapter : TodoAdapter) : AnkoComponent<MainActivity> {
@@ -67,7 +65,7 @@ class MainUI(val mAdapter : TodoAdapter) : AnkoComponent<MainActivity> {
                         customView {
                             verticalLayout {
                                 toolbar {
-                                    id = 5
+                                    id = R.id.dialog_toolbar
                                     lparams(width = matchParent, height = wrapContent)
                                     backgroundColor = ContextCompat.getColor(ctx, R.color.colorAccent)
                                     title = "What's your next milestone?"

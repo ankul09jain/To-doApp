@@ -1,7 +1,6 @@
 package com.appshaala.sitepoint.to_do_app
 
 import android.graphics.Typeface
-import android.graphics.Typeface.BOLD
 import android.graphics.Typeface.DEFAULT_BOLD
 import android.view.View
 import android.view.ViewGroup
@@ -12,7 +11,7 @@ import java.util.*
 
 
 /**
- * Created by mahesh on 28-Jan-17.
+ * Created by Ankul on 28-Jan-17.
  */
 
 class TodoAdapter(val list: ArrayList<String> = ArrayList<String>()) : BaseAdapter() {
@@ -26,7 +25,7 @@ class TodoAdapter(val list: ArrayList<String> = ArrayList<String>()) : BaseAdapt
                 orientation = HORIZONTAL
 
                 textView {
-                    id = 9
+                    id = R.id.taskNum
                     text=""+taskNum
                     textSize = 16f
                     typeface = Typeface.MONOSPACE
@@ -34,7 +33,7 @@ class TodoAdapter(val list: ArrayList<String> = ArrayList<String>()) : BaseAdapt
                 }
 
                 textView {
-                    id = 7
+                    id = R.id.taskName
                     text=list.get(i)
                     textSize = 16f
                     typeface = DEFAULT_BOLD
