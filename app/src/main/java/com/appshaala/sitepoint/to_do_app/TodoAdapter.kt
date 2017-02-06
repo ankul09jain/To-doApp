@@ -17,10 +17,13 @@ import java.util.*
 class TodoAdapter(val list: ArrayList<String> = ArrayList<String>()) : BaseAdapter() {
     override fun getView(i : Int, v : View?, parent : ViewGroup?) : View {
         return with(parent!!.context) {
+            //taskNum will serve as the S.No. of the list starting from 1
             var taskNum: Int = i +1
+
             //Layout for a list view item
             linearLayout {
-                lparams(width = org.jetbrains.anko.matchParent, height = wrapContent)
+                id = R.id.listItemContainer
+                lparams(width = matchParent, height = wrapContent)
                 padding = dip(10)
                 orientation = HORIZONTAL
 

@@ -34,8 +34,7 @@ dependencies {
     //kotlin
     compile "org.jetbrains.kotlin:kotlin-stdlib:1.0.6"
     //anko
-    compile 'org.jetbrains.anko:anko-sdk19:0.8.3'
+    compile 'org.jetbrains.anko:anko-sdk15:0.8.3'
     compile "org.jetbrains.anko:anko-design:0.8.3"
-    compile "org.jetbrains.anko:anko-support-v4:0.8.3"
     compile 'org.jetbrains.anko:anko-appcompat-v7:0.8.3'
 }

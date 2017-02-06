@@ -19,8 +19,10 @@ class MainActivity : AppCompatActivity() {
             val arrayList = savedInstanceState.get("ToDoList")
             task_list.addAll(arrayList as List<String>)
         }
-//        MainUI(TodoAdapter(task_list)).setContentView(this)
-        Demo().setContentView(this)
+        var adapter=TodoAdapter(task_list)
+        var ui = MainUI(adapter)
+        ui.setContentView(this)
+//        Demo().setContentView(this)
 
     }
     override fun onSaveInstanceState(outState: Bundle?) {

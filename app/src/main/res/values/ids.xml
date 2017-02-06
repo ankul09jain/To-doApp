@@ -5,4 +5,5 @@
     <item name="taskNum" type="id" />
     <item name="taskName" type="id" />
     <item name="likeBtn" type="id" />
+    <item name="listItemContainer" type="id" />
 </resources>

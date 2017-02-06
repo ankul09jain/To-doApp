@@ -12,7 +12,7 @@ import org.jetbrains.anko.design.floatingActionButton
  * Created by Ankul on 28-Jan-17.
  */
 
-class MainUI(val mAdapter : TodoAdapter) : AnkoComponent<MainActivity> {
+class MainUI(val todoAdapter: TodoAdapter) : AnkoComponent<MainActivity> {
     override fun createView(ui: AnkoContext<MainActivity>): View = with(ui) {
         return relativeLayout {
             var todoList : ListView? =null
@@ -36,13 +36,13 @@ class MainUI(val mAdapter : TodoAdapter) : AnkoComponent<MainActivity> {
             //layout to display ListView
             verticalLayout {
                 todoList=listView {
-                    adapter = mAdapter
+                    adapter = todoAdapter
                     onItemLongClick { adapterView, view, i, l ->
                         val options = listOf("Completed","In Progress","Not Started","Delete")
                         selector("Task Options", options) { j ->
                             if (j == 3) {
                                 var task=adapter.getItem(i)
-                                mAdapter?.delete(i)
+                                todoAdapter?.delete(i)
                                 showHideHintListView(this@listView)
                                 longToast("Task ${task} has been deleted")
                             }else{
@@ -76,14 +76,20 @@ class MainUI(val mAdapter : TodoAdapter) : AnkoComponent<MainActivity> {
                                     padding = dip(20)
                                 }
                                 positiveButton("Add") {
-                                    adapter.add(task.text.toString())
-                                    showHideHintListView(todoList!!)
+                                    if(task.text.toString().isEmpty()) {
+                                        toast("Oops!! Your task says nothing!")
+                                    }
+                                    else {
+                                        adapter.add(task.text.toString())
+                                        showHideHintListView(todoList!!)
+                                    }
                                 }
                             }
                         }
                     }.show()
                 }
             }.lparams {
+                //setting button to bottom right of the screen
                 margin = dip(10)
                 alignParentBottom()
                 alignParentEnd()
@@ -100,7 +106,7 @@ class MainUI(val mAdapter : TodoAdapter) : AnkoComponent<MainActivity> {
 
     }
 
-    //function to get total number of item in list
+    //function to get total number of items in list
     fun getTotalListItems(list: ListView?) = list?.adapter?.count ?: 0
 }
 
